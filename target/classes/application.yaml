@@ -1,0 +1,36 @@
+spring.profiles.active: dev
+
+# 综合配置
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+
+    # Show or not log for each sql query
+    jpa:
+        show-sql: true
+        properties:
+          hibernate:
+            hbm2ddl:
+              auto: validate
+
+
+---
+# 开发环境
+spring:
+    profiles: dev
+    datasource:
+        url: jdbc:mysql://localhost:3306/examonline
+        username: examonlineuser
+        password: SOAPass@2017
+
+server:
+    port: 8086
+
+spring.jpa.show-sql: false
+
+endpoints: 
+  shutdown: 
+    enabled: true
+    sensitive: false
+    
+
